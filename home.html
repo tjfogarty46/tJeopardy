@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jeopardy! Replayer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src=" https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+</head>
+<body>
+<div id=logo>
+    <img id="logopic" src="tj_logo.png" alt="tjeopardy_logo">
+</div>
+<div id = header>
+    <h1>t-Jeopardy!</h1>
+    <p>a fun way to play brought to you by your friend in philadelphia</p>
+</div>
+<div id="loadFileTextField">
+    <input type="file" id="fileUpload">
+</div>
+</br>
+</br>
+<div id = contestantsDiv>
+    <h2>Contestants</h2>
+    <table id=ContsTable>
+        <tr id=names>
+            <td id="contestant1">
+                <textarea>Contestant 1</textarea>
+            </td>
+            <td id="contestant2">
+                <textarea>Contestant 2</textarea>
+            </td>
+            <td id="contestant3">
+                <textarea>Contestant 3</textarea>
+            </td>
+        </tr>
+        <tr id="scores">
+            <td id="score1">0</td>
+            <td id="score2">0</td>
+            <td id="score3">0</td>
+        </tr>
+        <tr id="editBtns">
+            <td>
+                <button id="editCont1">edit</button>
+                <button id="rightCont1">right</button>
+                <button id="wrongCont1">wrong</button>
+            </td>
+            <td>
+                <button id="editCont2">edit</button>
+                <button id="rightCont2">right</button>
+                <button id="wrongCont2">wrong</button>
+            </td>
+            <td>
+                <button id="editCont3">edit</button>
+                <button id="rightCont3">right</button>
+                <button id="wrongCont3">wrong</button>
+            </td>
+        </tr>
+    </table>
+</div>
+</br>
+
+<div id="jeopardyRound">
+    <h2>Jeopardy Round!</h2>
+    <table id=jround>
+        <tr id = jcategories>
+            <td id="cat1">cat 1</td>
+            <td id="cat2">cat 2</td>
+            <td id="cat3">cat 3</td>
+            <td id="cat4">cat 4</td>
+            <td id="cat5">cat 5</td>
+            <td id="cat6">cat 6</td>
+        </tr>
+        <tr id="j200">
+            <td><button class="scoreBtn" value="200">$200</button></td>
+            <td><button class="scoreBtn" value="200">$200</button></td>
+            <td><button class="scoreBtn" value="200">$200</button></td>
+            <td><button class="scoreBtn" value="200">$200</button></td>
+            <td><button class="scoreBtn" value="200">$200</button></td>
+            <td><button class="scoreBtn" value="200">$200</button></td>
+        </tr>
+        <tr id="j400">
+            <td><button class="scoreBtn" value="400">$400</button></td>
+            <td><button class="scoreBtn" value="400">$400</button></td>
+            <td><button class="scoreBtn" value="400">$400</button></td>
+            <td><button class="scoreBtn" value="400">$400</button></td>
+            <td><button class="scoreBtn" value="400">$400</button></td>
+            <td><button class="scoreBtn" value="400">$400</button></td>
+        </tr>
+        <tr id="j600">
+            <td><button class="scoreBtn" value="600">$600</button></td>
+            <td><button class="scoreBtn" value="600">$600</button></td>
+            <td><button class="scoreBtn" value="600">$600</button></td>
+            <td><button class="scoreBtn" value="600">$600</button></td>
+            <td><button class="scoreBtn" value="600">$600</button></td>
+            <td><button class="scoreBtn" value="600">$600</button></td>
+        </tr>
+        <tr id="j800">
+            <td><button class="scoreBtn" value="800">$800</button></td>
+            <td><button class="scoreBtn" value="800">$800</button></td>
+            <td><button class="scoreBtn" value="800">$800</button></td>
+            <td><button class="scoreBtn" value="800">$800</button></td>
+            <td><button class="scoreBtn" value="800">$800</button></td>
+            <td><button class="scoreBtn" value="800">$800</button></td>
+        </tr>
+        <tr id="j1k">
+            <td><button class="scoreBtn" value="1000">$1000</button></td>
+            <td><button class="scoreBtn" value="1000">$1000</button></td>
+            <td><button class="scoreBtn" value="1000">$1000</button></td>
+            <td><button class="scoreBtn" value="1000">$1000</button></td>
+            <td><button class="scoreBtn" value="1000">$1000</button></td>
+            <td><button class="scoreBtn" value="1000">$1000</button></td>
+        </tr>
+    </table>
+</div>
+</br>
+<div id="doubleJRnd">
+    <h2>Double Jeopardy Round!</h2>
+    <table id=djround>
+        <tr id = jcategories>
+            <td id="cat7">cat 1</td>
+            <td id="cat8">cat 2</td>
+            <td id="cat9">cat 3</td>
+            <td id="cat10">cat 4</td>
+            <td id="cat11">cat 5</td>
+            <td id="cat12">cat 6</td>
+        </tr>
+        <tr id="dj200">
+            <td><button class="scoreBtn" value="400">$400</button></td>
+            <td><button class="scoreBtn" value="400">$400</button></td>
+            <td><button class="scoreBtn" value="400">$400</button></td>
+            <td><button class="scoreBtn" value="400">$400</button></td>
+            <td><button class="scoreBtn" value="400">$400</button></td>
+            <td><button class="scoreBtn" value="400">$400</button></td>
+        </tr>
+        <tr id="dj400">
+            <td><button class="scoreBtn" value="800">$800</button></td>
+            <td><button class="scoreBtn" value="800">$800</button></td>
+            <td><button class="scoreBtn" value="800">$800</button></td>
+            <td><button class="scoreBtn" value="800">$800</button></td>
+            <td><button class="scoreBtn" value="800">$800</button></td>
+            <td><button class="scoreBtn" value="800">$800</button></td>
+        </tr>
+        <tr id="dj600">
+            <td><button class="scoreBtn" value="1200">$1200</button></td>
+            <td><button class="scoreBtn" value="1200">$1200</button></td>
+            <td><button class="scoreBtn" value="1200">$1200</button></td>
+            <td><button class="scoreBtn" value="1200">$1200</button></td>
+            <td><button class="scoreBtn" value="1200">$1200</button></td>
+            <td><button class="scoreBtn" value="1200">$1200</button></td>
+        </tr>
+        <tr id="dj800">
+            <td><button class="scoreBtn" value="1600">$1600</button></td>
+            <td><button class="scoreBtn" value="1600">$1600</button></td>
+            <td><button class="scoreBtn" value="1600">$1600</button></td>
+            <td><button class="scoreBtn" value="1600">$1600</button></td>
+            <td><button class="scoreBtn" value="1600">$1600</button></td>
+            <td><button class="scoreBtn" value="1600">$1600</button></td>
+        </tr>
+        <tr id="dj1k">
+            <td><button class="scoreBtn" value="2000">$2000</button></td>
+            <td><button class="scoreBtn" value="2000">$2000</button></td>
+            <td><button class="scoreBtn" value="2000">$2000</button></td>
+            <td><button class="scoreBtn" value="2000">$2000</button></td>
+            <td><button class="scoreBtn" value="2000">$2000</button></td>
+            <td><button class="scoreBtn" value="2000">$2000</button></td>
+        </tr>
+    </table>
+</div>
+
+<div id=finaljcat>
+    <p id=fjcat>click to reveal final jeopardy category</p>
+    <button id=fjreveal>click</button>
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>
